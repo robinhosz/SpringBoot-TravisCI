@@ -4,8 +4,14 @@ dist: trusty
 jdk:
   - openjdk17
 
+addons:
+  sonarcloud:
+    organization: "robinhosztravis"
+    token:
+      secure: $SONAR_TOKEN # encrypted value of your token
+      
 script:
-- mvn clean install
+- mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar -Dsonar.projectKey=robinhosztravis_robinhosz
 
 before_install:
   - chmod +x mvnw
