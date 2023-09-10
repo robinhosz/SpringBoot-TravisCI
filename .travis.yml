@@ -4,7 +4,7 @@ jdk:
 
 # Indica que estamos usando o sistema de compilação Maven
 script:
-- ./mvnw clean install -B
+- mvn clean install
 
 # Você pode adicionar etapas adicionais, como testes, aqui
 # Por exemplo, para executar os testes após a compilação:
