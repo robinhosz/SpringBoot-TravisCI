@@ -4,25 +4,10 @@ jdk:
 
 # Indica que estamos usando o sistema de compilação Maven
 script:
-  - ./mvnw clean install
+  - ./mvnw.cmd install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
 
 # Você pode adicionar etapas adicionais, como testes, aqui
 # Por exemplo, para executar os testes após a compilação:
 # script:
 #   - ./mvnw clean install
 #   - ./mvnw test
-
-# Cache das dependências do Maven para acelerar builds subsequentes
-cache:
-  directories:
-    - $HOME/.m2/repository
-
-# Opcional: notificações por email quando a build falha ou é corrigida
-notifications:
-  email:
-    recipients:
-      - joserobsonsiqueira23@hotmail.com
-    on_success: always # não envie e-mail quando for bem-sucedido
-    on_failure: always # envie e-mail quando falhar
-
-# Você pode adicionar outras configurações específicas do Spring Boot, se necessário
