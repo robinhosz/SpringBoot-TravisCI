@@ -4,7 +4,7 @@ jdk:
 
 # Indica que estamos usando o sistema de compilação Maven
 script:
-  - ./mvnw.cmd install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
+- ./mvnw clean install -B
 
 # Você pode adicionar etapas adicionais, como testes, aqui
 # Por exemplo, para executar os testes após a compilação:
